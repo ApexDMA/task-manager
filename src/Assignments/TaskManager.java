@@ -349,7 +349,24 @@ public class TaskManager extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuinsertafterActionPerformed
 
     private void mnuinsertbeforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuinsertbeforeActionPerformed
-        // TODO add your handling code here:
+        String nm = txtname.getText();//read in from screen
+        String d = txtdescription.getText();
+        Task t = new Task(nm, d);// make a task with it
+        if (t.validate() == false) {//make sure data is ok
+            JOptionPane.showMessageDialog(this, "Error - Must enter all information.");
+            return;
+        }
+        if (tottask > 0) {
+            li.previous();//go past current task if you have at least 1
+        }
+
+        li.add(t);//it always adds to the left of the iterator
+        li.previous();//always put the iterator BEFORE current task
+        curtask++;//new task is now current and we inserted AFTER, so advance current
+        tottask++;//we have one new task
+        lblttask.setText("" + tottask);//update counter displays
+        lblctask.setText("" + curtask);
+        JOptionPane.showMessageDialog(this, "Task added.");
     }//GEN-LAST:event_mnuinsertbeforeActionPerformed
 
     private void btnlastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlastActionPerformed
