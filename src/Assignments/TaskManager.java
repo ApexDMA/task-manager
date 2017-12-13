@@ -71,7 +71,7 @@ public class TaskManager extends javax.swing.JFrame {
 
         jLabel2.setText("Description:");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel3.setText("Current Task");
 
@@ -453,6 +453,8 @@ public class TaskManager extends javax.swing.JFrame {
     private void mnurestorecurrenttaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnurestorecurrenttaskActionPerformed
         txtname.setText(t.getName());
         txtdescription.setText(t.getDescription());
+        lblttask.setText("");
+        lblctask.setText("");
     }//GEN-LAST:event_mnurestorecurrenttaskActionPerformed
 
     private void btnprevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprevActionPerformed
